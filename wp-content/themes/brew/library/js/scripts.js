@@ -125,12 +125,10 @@ var isVisible = false;
 			 if (shouldBeVisible && !isVisible) {
 				  isVisible = true;
 				  $('.navbar-fixed-top').fadeOut("slow");
-				  $('.navbar-scroll').fadeOut("slow");
 
 			 } else if (isVisible && !shouldBeVisible) {
 				  isVisible = false;
 				  $('.navbar-fixed-top').fadeIn("slow");
-				  $('.navbar-scroll').fadeIn("slow");
 
 			}
 		});
