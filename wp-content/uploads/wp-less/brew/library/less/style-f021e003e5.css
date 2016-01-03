@@ -7839,7 +7839,7 @@ These are the styles for posts, pages, archive, & blog index
 #main is all post/entry/page content)
 ********************************/
 #content {
-  padding-top: 120px !important;
+  padding-top: 170px !important;
   min-height: 600px;
 }
 /*******************************
@@ -8024,7 +8024,6 @@ and more scalable.
 @media (max-width: 768px) {
   .header .logo img {
     margin-left: -10px;
-    margin-bottom: 12px;
     margin-top: 8px;
   }
 }
@@ -8239,8 +8238,8 @@ This is just for the sample BREW site.  Feel free to delete
   margin-bottom: 60px;
   padding-top: 30px;
   text-align: center;
-  height: 350px;
-  background: url('http://localhost:8888/dev.mgeonline/wp-content/themes/brew/library/less/images/hero.png') #2a5781;
+  height: 640px;
+  background: url('http://localhost:8888/dev.mgeonline/wp-content/themes/brew/library/less/../images/hero.png') #2a5781;
   background-size: cover;
   background-position: center center;
   color: #fff;

@@ -1,10 +1,10 @@
 <?php
 /*
-Template Name: Home Page Template
+Template Name: Home Copy Template
 */
 ?>
 
-<?php get_header('home'); ?>
+<?php get_header(); ?>
 
 <div class="homebanner">
   <div class="container">

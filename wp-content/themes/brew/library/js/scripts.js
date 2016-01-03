@@ -67,24 +67,77 @@ jQuery(document).ready(function($) {
     
 	
 	// add all your scripts here
+	
+	
+if ($(window).width() > 800  ) {
+    //small screen, load other JS files
+    
 
-var isVisible = false;
-$('.navbar').click(function(){
-    $(window).scrollTop(0);
-});
-$(window).scroll(function(){
-     var shouldBeVisible = $(window).scrollTop()<60;
-     if (shouldBeVisible && !isVisible) {
-          isVisible = true;
-          $('.navbar').fadeIn("slow");
-     } else if (isVisible && !shouldBeVisible) {
-          isVisible = false;
-          $('.navbar').fadeOut("slow");
-    }
-});
-function myFunction() {
-    document.getElementByClass("dropdown-menu").innerHTML = "Hello World";
+	
+	
+if ( window.location.pathname == '/dev.mgeonline/' ){
+    // Index (home) page
+    $('.navbar-scroll').hide();
+    	var isVisible = false;
+		$('.navbar').click(function(){
+			$(window).scrollTop(0);
+		});
+		$(window).scroll(function(){
+			 var shouldBeVisible = $(window).scrollTop()<30;
+			 if (shouldBeVisible && !isVisible) {
+				  isVisible = true;
+				  $('.navbar').fadeIn("slow");
+				  $('.navbar-scroll').fadeOut("slow");
+
+			 } else if (isVisible && !shouldBeVisible) {
+				  isVisible = false;
+				  $('.navbar').fadeOut("slow");
+				  $('.navbar-scroll').fadeIn("slow");
+				  
+			}
+		});
+
+
+} else {
+    // Other page
+	var isVisible = false;
+		$('.navbar').click(function(){
+			$(window).scrollTop(0);
+		});
+		$(window).scroll(function(){
+			 var shouldBeVisible = $(window).scrollTop()<60;
+			 if (shouldBeVisible && !isVisible) {
+				  isVisible = true;
+				  $('.navbar').fadeIn("slow");
+			 } else if (isVisible && !shouldBeVisible) {
+				  isVisible = false;
+				  $('.navbar').fadeOut("slow");
+			}
+		});
 }
+	} else {
+var isVisible = false;
+		$('.navbar-fixed-top').click(function(){
+			$(window).scrollTop(0);
+		});
+		$(window).scroll(function(){
+			 var shouldBeVisible = $(window).scrollTop()>60;
+			 if (shouldBeVisible && !isVisible) {
+				  isVisible = true;
+				  $('.navbar-fixed-top').fadeOut("slow");
+				  $('.navbar-scroll').fadeOut("slow");
+
+			 } else if (isVisible && !shouldBeVisible) {
+				  isVisible = false;
+				  $('.navbar-fixed-top').fadeIn("slow");
+				  $('.navbar-scroll').fadeIn("slow");
+
+			}
+		});
+};
+
+
+	
 
  
 }); /* end of as page load scripts */
