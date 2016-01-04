@@ -3678,6 +3678,14 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     float: left;
   }
 }
+#navbar-scroll-mob {
+  display: none !important;
+}
+@media (max-width: 768px) {
+  #navbar-scroll-mob {
+    display: block !important;
+  }
+}
 .navbar-collapse {
   max-height: 340px;
   overflow-x: visible;

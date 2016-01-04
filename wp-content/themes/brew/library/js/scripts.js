@@ -47,7 +47,7 @@ jQuery(document).ready(function($) {
     
     /* if is larger than 481px */
     if (responsive_viewport > 481) {
-        
+
     } /* end larger than 481px */
     
     /* if is above or equal to 768px */
@@ -67,11 +67,6 @@ jQuery(document).ready(function($) {
     
 	
 	// add all your scripts here
-	
-	
-if ($(window).width() > 800  ) {
-    //small screen, load other JS files
-    
 
 	
 	
@@ -101,37 +96,20 @@ if ( window.location.pathname == '/dev.mgeonline/' ){
 } else {
     // Other page
 	var isVisible = false;
-		$('.navbar').click(function(){
+		$('.navbar-js').click(function(){
 			$(window).scrollTop(0);
 		});
 		$(window).scroll(function(){
 			 var shouldBeVisible = $(window).scrollTop()<60;
 			 if (shouldBeVisible && !isVisible) {
 				  isVisible = true;
-				  $('.navbar').fadeIn("slow");
+				  $('.navbar-js').fadeIn("slow");
 			 } else if (isVisible && !shouldBeVisible) {
 				  isVisible = false;
-				  $('.navbar').fadeOut("slow");
+				  $('.navbar-js').fadeOut("slow");
 			}
 		});
-}
-	} else {
-var isVisible = false;
-		$('.navbar-fixed-top').click(function(){
-			$(window).scrollTop(0);
-		});
-		$(window).scroll(function(){
-			 var shouldBeVisible = $(window).scrollTop()>60;
-			 if (shouldBeVisible && !isVisible) {
-				  isVisible = true;
-				  $('.navbar-fixed-top').fadeOut("slow");
-
-			 } else if (isVisible && !shouldBeVisible) {
-				  isVisible = false;
-				  $('.navbar-fixed-top').fadeIn("slow");
-
-			}
-		});
+		
 };
 
 

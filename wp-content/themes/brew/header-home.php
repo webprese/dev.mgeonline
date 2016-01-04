@@ -44,15 +44,11 @@
     <header class="header">
 
       <nav role="navigation">
-        <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: transparent !important">
+        <div class="navbar navbar-inverse navbar-fixed-top navbar-js" style="background-color: transparent !important">
           <div class="container">
             <!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
             <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
+              
 				<div class="top container col-xs-12 col-sm-12 col-lg-12">
 						<div class="logo col-xs-12 col-sm-3 col-lg-3"> 
 								<a class="navbar-brand" href="<?php bloginfo( 'url' ) ?>/" title="<?php bloginfo( 'name' ) ?>" rel="homepage">
@@ -84,15 +80,11 @@
             </div>
           </div>
         </div> 
-        <div class="navbar-scroll navbar-inverse navbar-fixed-top navbar-scroll-js">
+        <div class="navbar-scroll navbar-inverse navbar-fixed-top">
           <div class="container">
             <!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
             <div class="navbar-header navbar-header-scroll">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
+            
 						<div class="logo col-xs-10 col-sm-8 col-md-3 col-lg-3"> 
 								<a class="" href="<?php bloginfo( 'url' ) ?>/" title="<?php bloginfo( 'name' ) ?>" rel="homepage">
 								<img src="<?php the_field('logo_scroll', 'option'); ?>" alt="<?php bloginfo( 'name' ) ?>" style="width:100%" >
@@ -107,6 +99,29 @@
           </div>
         </div> 
         
+        <div id="navbar-scroll-mob" style="display:none;">
+					 <div class="navbar-inverse navbar-fixed-top navbar-scroll-js">
+								  <div class="container">
+									<!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
+															<div class="navbar-header navbar-header-scroll">
+															  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+																<span class="icon-bar"></span>
+																<span class="icon-bar"></span>
+																<span class="icon-bar"></span>
+															  </button>
+																		<div class="logo col-xs-10 col-sm-8 col-md-3 col-lg-3"> 
+																				<a class="" href="<?php bloginfo( 'url' ) ?>/" title="<?php bloginfo( 'name' ) ?>" rel="homepage">
+																				<img src="<?php the_field('logo_scroll', 'option'); ?>" alt="<?php bloginfo( 'name' ) ?>" style="width:100%" >
+																				</a>
+																		</div>
+																</div>            
+
+																<div class="navbar-scroll-nav navbar-collapse collapse navbar-responsive-collapse">
+																  <?php bones_main_nav(); ?>
+																</div>
+								  </div>
+					</div> 
+        </div>
       </nav>
       
 
