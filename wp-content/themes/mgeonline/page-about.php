@@ -8,7 +8,7 @@ Template Name: About
 <div class="row">
 	<div class="col-md-12 seminar-signup">
 		<div class="container">
-			<a href="" ><span>&#8592;</span> home</a>
+			<a href="<?php get_home_url(); ?>" ><span>&#8592;</span> home</a>
 			<div class="signup-section col-sm-12">
 				<div class="col-xs-12 col-sm-6">
 					<h3> <?php echo the_field('about_description_header'); ?></h3>
@@ -20,7 +20,7 @@ Template Name: About
 </div>
 <div class="row who-we-are">
 	<div class="container seminar-container">
-		<div id="content" class="clearfix row">
+		<div id="" class="clearfix row">
 			<div id="main" class="col-md-12 clearfix" role="main">		
 				<div class="row">
 					<div class="col-md-12">
@@ -47,7 +47,7 @@ Template Name: About
 </div>
 <div class="row grey-bg">
 	<div class="container seminar-container">
-		<div id="content" class="clearfix row">
+		<div id="" class="clearfix row">
 			<div id="main" class="col-md-12 clearfix" role="main">
 					<div class="col-md-12">
 						<div class="col-md-6 col-xs-12">
@@ -96,7 +96,7 @@ Template Name: About
 			</div> -->
 <div class="row">
 	<div class="container seminar-container">
-		<div id="content" class="clearfix row">
+		<div id="" class="clearfix row">
 			<div id="main" class="col-md-12 clearfix" role="main">
 				<div class="col-md-12 owners">
 					<h3><?php echo the_field('meet_the_owners_header'); ?></h3>

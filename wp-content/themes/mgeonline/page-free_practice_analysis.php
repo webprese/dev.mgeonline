@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Workshop
+Template Name: Free Practice Analysis
 */
 ?>
 

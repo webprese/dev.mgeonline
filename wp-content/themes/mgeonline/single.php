@@ -6,7 +6,6 @@
 
 				<div id="main" class="col-md-8 clearfix" role="main">
 
-        		<?php get_template_part( 'breadcrumb' ); ?>
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 

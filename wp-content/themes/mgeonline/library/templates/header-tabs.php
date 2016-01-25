@@ -11,7 +11,7 @@
 	</div>
 </div>
 <div id="tabcontents">
-<div class="tabbed-content">
+<div class="tabbed-content ">
 
     <div id="tab1content" class="tabcontent container">
         <?php 
@@ -31,11 +31,11 @@
 	'exclude_tree'       => '',
 	'include'            => '',
 	'hierarchical'       => 1,
-	'title_li'           => __( 'Categories' ),
+	'title_li'           => '',
 	'show_option_none'   => __( '' ),
-	'number'             => null,
+	'number'             => 18,
 	'echo'               => 1,
-	'depth'              => 0,
+	'depth'              => 1,
 	'current_category'   => 0,
 	'pad_counts'         => 0,
 	'taxonomy'           => 'category',
@@ -58,13 +58,13 @@
     </div>
     
     <div id="tab3content" class="tabcontent">
-              <?php wp_list_authors('show_fullname=1&optioncount=1&orderby=post_count&order=DESC&number=3'); ?>
+              <?php wp_list_authors('show_fullname=1&optioncount=1&orderby=post_count&order=DESC'); ?>
 
     </div>
     <div id="tab4content" class="tabcontent">
  <?php $args = array(
 	'type'            => 'monthly',
-	'limit'           => '',
+	'limit'           => '15',
 	'format'          => 'html', 
 	'before'          => '',
 	'after'           => '',
