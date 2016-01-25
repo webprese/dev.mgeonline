@@ -538,45 +538,62 @@ background-position: 0px 6px;
 }
 .post-type-archive, .category, .blog {
 	#content {padding-bottom: 100px;}
-	.blog-col {padding:0px 30px 50px 0px;}
+	.archive-title {
+	margin-top: 0px;
+	font-size: 18px;
+	font-weight: 700;
+	color: #515151;
+	max-height: 62px;
+	overflow: hidden;
+	line-height: 21px;
+}
+	.blog-col {
+	padding:0px 30px 50px 0px;
+    max-height: 220px !important;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	}
 	.media-excerpt {
 	padding-left:20px;
 	}
-	.media-excerpt-blog p {
+
+	.media-excerpt-blog {
+	.limited-excerpt p {
 	overflow: hidden;
 	text-overflow: ellipsis;
-	max-height: 50px;
+	max-height: 80px;
 	max-width: 300px;
 	}
-	
 	.vcard {
 	margin-bottom: 5px;
 	font-size: 17px;
-	line-height: 20px;
+	line-height: 25px;
 	color: #c1c1c1;
 	padding-top: 0px;
-	p {line-height: 20px !important;}
+	p {line-height: 20px !important;
+	max-height: 48px !important;}
 
 	a {
 	color: #c1c1c1;
 
 	}
+	
+}
 }
 	.entry-content {
 		padding: 0px 20px 20px 0px;
 		p {
 		margin-bottom: 20px;
 		font-size: 18px;
-		line-height: 26px;
+		line-height: 24px;
 		color: #545454;
 		padding-top:0px;
 		}
 		.vcard {
-	margin-bottom: 5px;
-	font-size: 17px;
-	line-height: 20px;
-	color: #c1c1c1;
-	padding-top: 0px;
+	font-size: 15px;
+line-height: 16px;
+color: #C1C1C1;
+padding-top: 0px;
 	p {line-height: 20px !important;}
 	}
 	}
@@ -620,7 +637,6 @@ max-height:260px;
 		transform: translateY(-50%) translateX(-50%);
 		top: 50%;
 		left: 50%;
-		max-height: 100%;
     }
 }
 .owl-wrapper-outer {
@@ -646,25 +662,38 @@ max-height:260px;
 	}
 }
 
-#tabs {
-    width: 100%;
+#tabs, #tabs2 {
+float:right;
 }
-#tabs ul {
+#tabs ul, #tabs2 ul {
     padding: 0;
     margin: 0;
     list-style: none;
 }
-#tabs ul li {
+#tabs ul li, #tabs2 ul li {
     float: left;
     padding: 10px;
-    background: #ccc;
+    color:#ffffff;
+    text-transform:uppercase;
+    font-weight: 700;
+font-family: "Raleway","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+font-size: 17px;	
 }
-#tabcontents {
+#tabcontents, #tabcontents2 {
     clear: both;
+
+
 }
-.tabcontent {
+.tabcontent, .tabcontent2 {
     display: none;
-    width: 400px;
-    background: #aaa;
+    width: 100%;
+	background-color:#bebf59;
     position: absolute;
+	color:#ffffff;
+	height:275px;
+}
+
+.tabbed-content {
+	width:100%;
+	background-color:#bebf59;
 }

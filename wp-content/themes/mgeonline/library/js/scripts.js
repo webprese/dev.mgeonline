@@ -90,6 +90,25 @@ $(document).ready(function() {
         $(this).hide();
     });
 });
+$(document).ready(function() {
+    $(".tab2").mouseenter(function() {
+        var tabId = $(this).attr('id');
+        $("#" + tabId + "content2").show();
+    });
+
+    $(".tabcontent2").mouseenter(function() {
+        $(this).show();
+    });
+
+    $(".tab2").mouseleave(function() {
+        var tabId = $(this).attr('id');
+        $("#" + tabId + "content2").hide();
+    });
+
+    $(".tabcontent2").mouseleave(function() {
+        $(this).hide();
+    });
+});
 	
 if ( window.location.pathname == '/dev.mgeonline/' ){
     // Index (home) page

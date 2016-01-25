@@ -7975,6 +7975,9 @@ These are the styles for posts, pages, archive, & blog index
   font-weight: 700;
   color: #515151;
 }
+.archive-title a {
+  color: #515151;
+}
 .byline {
   color: #999;
   margin: 0;
@@ -8857,41 +8860,56 @@ This is just for the sample BREW site.  Feel free to delete
 .blog #content {
   padding-bottom: 100px;
 }
+.post-type-archive .archive-title,
+.category .archive-title,
+.blog .archive-title {
+  margin-top: 0px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #515151;
+  max-height: 62px;
+  overflow: hidden;
+  line-height: 21px;
+}
 .post-type-archive .blog-col,
 .category .blog-col,
 .blog .blog-col {
   padding: 0px 30px 50px 0px;
+  max-height: 220px !important;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 .post-type-archive .media-excerpt,
 .category .media-excerpt,
 .blog .media-excerpt {
   padding-left: 20px;
 }
-.post-type-archive .media-excerpt-blog p,
-.category .media-excerpt-blog p,
-.blog .media-excerpt-blog p {
+.post-type-archive .media-excerpt-blog .limited-excerpt p,
+.category .media-excerpt-blog .limited-excerpt p,
+.blog .media-excerpt-blog .limited-excerpt p {
   overflow: hidden;
   text-overflow: ellipsis;
-  max-height: 50px;
+  max-height: 80px;
   max-width: 300px;
 }
-.post-type-archive .vcard,
-.category .vcard,
-.blog .vcard {
+.post-type-archive .media-excerpt-blog .vcard,
+.category .media-excerpt-blog .vcard,
+.blog .media-excerpt-blog .vcard {
   margin-bottom: 5px;
   font-size: 17px;
-  line-height: 20px;
+  line-height: 25px;
   color: #c1c1c1;
   padding-top: 0px;
 }
-.post-type-archive .vcard p,
-.category .vcard p,
-.blog .vcard p {
+.post-type-archive .media-excerpt-blog .vcard p,
+.category .media-excerpt-blog .vcard p,
+.blog .media-excerpt-blog .vcard p {
   line-height: 20px !important;
+  max-height: 48px !important;
 }
-.post-type-archive .vcard a,
-.category .vcard a,
-.blog .vcard a {
+.post-type-archive .media-excerpt-blog .vcard a,
+.category .media-excerpt-blog .vcard a,
+.blog .media-excerpt-blog .vcard a {
   color: #c1c1c1;
 }
 .post-type-archive .entry-content,
@@ -8904,17 +8922,16 @@ This is just for the sample BREW site.  Feel free to delete
 .blog .entry-content p {
   margin-bottom: 20px;
   font-size: 18px;
-  line-height: 26px;
+  line-height: 24px;
   color: #545454;
   padding-top: 0px;
 }
 .post-type-archive .entry-content .vcard,
 .category .entry-content .vcard,
 .blog .entry-content .vcard {
-  margin-bottom: 5px;
-  font-size: 17px;
-  line-height: 20px;
-  color: #c1c1c1;
+  font-size: 15px;
+  line-height: 16px;
+  color: #C1C1C1;
   padding-top: 0px;
 }
 .post-type-archive .entry-content .vcard p,
@@ -8968,7 +8985,6 @@ This is just for the sample BREW site.  Feel free to delete
   transform: translateY(-50%) translateX(-50%);
   top: 50%;
   left: 50%;
-  max-height: 100%;
 }
 .owl-wrapper-outer {
   min-height: 310px;
@@ -8995,27 +9011,42 @@ This is just for the sample BREW site.  Feel free to delete
   max-height: 50px;
   max-width: 300px;
 }
-#tabs {
-  width: 100%;
+#tabs,
+#tabs2 {
+  float: right;
 }
-#tabs ul {
+#tabs ul,
+#tabs2 ul {
   padding: 0;
   margin: 0;
   list-style: none;
 }
-#tabs ul li {
+#tabs ul li,
+#tabs2 ul li {
   float: left;
   padding: 10px;
-  background: #ccc;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-size: 17px;
 }
-#tabcontents {
+#tabcontents,
+#tabcontents2 {
   clear: both;
 }
-.tabcontent {
+.tabcontent,
+.tabcontent2 {
   display: none;
-  width: 400px;
-  background: #aaa;
+  width: 100%;
+  background-color: #bebf59;
   position: absolute;
+  color: #ffffff;
+  height: 275px;
+}
+.tabbed-content {
+  width: 100%;
+  background-color: #bebf59;
 }
 /*
 RETINA (2x RESOLUTION DEVICES)
