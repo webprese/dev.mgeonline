@@ -22,14 +22,12 @@
 
 					<div id="main" class="col-md-12 clearfix" role="main">
 
-            <!-- UNCOMMENT FOR BREADCRUMBS
-            <?php if ( function_exists('custom_breadcrumb') ) { custom_breadcrumb(); } ?> -->
 
-					<h1 class="archive-title h2">In the Media</h1>
+					<h2 class="main-title">In the Media</h2>
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-						<article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?> role="article">
+						<article class="blog-col-feed" id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?> role="article">
 
 							<section class="entry-content clearfix">
 									<?php if ( has_post_thumbnail()) : ?>
@@ -53,16 +51,7 @@
 											} ?></p>
 
 									<?php the_excerpt(); ?>
-									<div class="fb-like" data-href="<?php the_permalink(); ?>" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
-										<a href="https://twitter.com/share" class="twitter-share-button" 
-										data-url="<?php the_permalink(); ?>" data-text="<?php the_title(); ?>" 
-										data-via="MGEOnline" data-count="vertical">Tweet</a>
-
-										<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
-										if(!d.getElementById(id)){js=d.createElement(s);js.id=id;
-										js.src="//platform.twitter.com/widgets.js";
-										fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-										</script>
+									
 									<div class="comment-more">
 									<a>Comments (<?php $commentcount = comments_number('0', '1', '%'); echo $commentcount; ?>)</a> | <a href="<?php echo get_permalink(); ?>">Read more &#8594;</a>
 									</div>									</div>
@@ -83,16 +72,7 @@
 											} ?></p>
 
 									<?php the_excerpt(); ?>
-										<div class="fb-like" data-href="<?php the_permalink(); ?>" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
-										<a href="https://twitter.com/share" class="twitter-share-button" 
-										data-url="<?php the_permalink(); ?>" data-text="<?php the_title(); ?>" 
-										data-via="MGEOnline" data-count="vertical">Tweet</a>
-
-										<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
-										if(!d.getElementById(id)){js=d.createElement(s);js.id=id;
-										js.src="//platform.twitter.com/widgets.js";
-										fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-										</script>
+										
 									<div class="comment-more">
 									<a>Comments (<?php $commentcount = comments_number('0', '1', '%'); echo $commentcount; ?>)</a> | <a href="<?php echo get_permalink(); ?>">Read more &#8594;</a>
 									</div>

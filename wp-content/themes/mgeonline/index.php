@@ -21,7 +21,7 @@
 			<?php echo do_shortcode('[mpsp_posts_slider id="252"]'); ?>
 			<div id="main" class="col-xs-12 clearfix" role="main">	
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-					<article class="col-lg-6 col-xs-12 blog-col" id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?> role="article">
+					<article class="col-lg-6 col-xs-12 blog-col blog-col-feed" id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?> role="article">
 						<section class="entry-content clearfix">
 							<div class="col-md-5 featured-thumbnail-blog">
 									<?php if ( has_post_thumbnail()) : ?>
@@ -32,7 +32,7 @@
 							</div>
 							<div class="col-md-7 media-excerpt-blog">
 								<h3 class="archive-title h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-									<p class="byline vcard"><?php printf( __( 'by <span class="author">%3$s</span> on <time class="updated" datetime="%1$s" pubdate>%2$s</time> in ', 'bonestheme' ), get_the_time( 'Y-m-j' ), get_the_time( __( 'F jS, Y', 'bonestheme' ) ), bones_get_the_author_posts_link()); ?>
+		 							<p class="byline vcard"><?php printf( __( 'by <span class="author">%3$s</span> on <time class="updated" datetime="%1$s" pubdate>%2$s</time> in ', 'bonestheme' ), get_the_time( 'Y-m-j' ), get_the_time( __( 'F jS, Y', 'bonestheme' ) ), bones_get_the_author_posts_link()); ?>
 									<?php 	$categories = get_the_category();
 												$separator = ' ';
 												$output = '';

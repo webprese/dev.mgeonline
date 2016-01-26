@@ -5,19 +5,26 @@
 			<div id="content" class="clearfix row">
 
 				<div id="main" class="col-md-8 clearfix" role="main">
+			<div class="home-link"><a href="<?php echo get_home_url(); ?>" ><span>&#8592;</span> home</a></div>
 
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 						<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
-							<header class="article-header">
+							 <header class="article-header">
 								<div class="titlewrap clearfix">
 									<h1 class="single-title entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
-									<p class="byline vcard">
-										by <span class="author"><em><?php echo bones_get_the_author_posts_link() ?></em></span> - 
-										<time class="updated" datetime="<?php get_the_time('Y-m-j') ?>"><?php echo get_the_time(get_option('date_format')) ?></time>
-										<span class="sticky-ind pull-right"><i class="fa fa-star"></i></span>
+									<p class="byline vcard"><?php printf( __( 'by <span class="author">%3$s</span> on <time class="updated" datetime="%1$s" pubdate>%2$s</time> in ', 'bonestheme' ), get_the_time( 'Y-m-j' ), get_the_time( __( 'F jS, Y', 'bonestheme' ) ), bones_get_the_author_posts_link()); ?>
+									<?php 	$categories = get_the_category();
+												$separator = ' ';
+												$output = '';
+												if ( ! empty( $categories ) ) {
+													foreach( $categories as $category ) {
+														$output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
+													}
+													echo trim( $output, $separator );
+												} ?>
 									</p>
 								</div>
 
@@ -32,9 +39,7 @@
 								else { ?>
 									<section class="featured-content featured-img">
 										<?php if ( has_post_thumbnail() ) { ?>
-		                                    <a class="featured-img" href="<?php the_permalink(); ?>">
-		                                    	<?php the_post_thumbnail( 'post-featured' ); ?>
-		                                    </a>
+		                                    	<?php the_post_thumbnail( 'large' ); ?>
 			                            <?php } // end if 
 										else { ?>
 			                            	<hr>
@@ -91,7 +96,7 @@
 					<?php } ?>
 
           <?php comments_template(); ?>
-
+ 
 					<?php endwhile; ?>
 
 					<?php else : ?>
@@ -112,8 +117,41 @@
 
 				</div> <?php // end #main ?>
 
-				<?php get_sidebar(); ?>
+				<div id="sidebar" class="col-md-4">
+				<div class="archive-title"><h2>Related Articles</h2></div>
+<?php
 
+$related = get_posts( array( 'category__in' => wp_get_post_categories($post->ID), 'numberposts' => 2, 'post__not_in' => array($post->ID) ) );
+if( $related ) foreach( $related as $post ) {
+setup_postdata($post); ?>
+
+        <div class="col-md-12 featured-thumbnail-blog clearfix">
+				<?php if ( has_post_thumbnail()) : ?>
+			   <?php the_post_thumbnail('large'); ?> 
+			   <?php else : ?>
+				<img src="<?php echo get_template_directory_uri(); ?>/library/images/mge-default.png" style="max-width:100%;">
+				<?php endif; ?>
+		</div>
+		<div class="sidebar-content"> 
+			<h3><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
+			<p class="byline vcard"><?php printf( __( 'by <span class="author">%3$s</span> on <time class="updated" datetime="%1$s" pubdate>%2$s</time> in ', 'bonestheme' ), get_the_time( 'Y-m-j' ), get_the_time( __( 'F jS, Y', 'bonestheme' ) ), bones_get_the_author_posts_link()); ?>
+									<?php 	$categories = get_the_category();
+												$separator = ' ';
+												$output = '';
+												if ( ! empty( $categories ) ) {
+													foreach( $categories as $category ) {
+														$output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
+													}
+													echo trim( $output, $separator );
+												} ?>
+									</p>
+			<p><?php echo excerpt(13); ?></p>
+        </div>
+				<div class="comment-more">
+					<a>Comments (<?php $commentcount = comments_number('0', '1', '%'); echo $commentcount; ?>)</a> | <a href="<?php echo get_permalink(); ?>">Read more &#8594;</a>
+				</div>
+<?php }
+wp_reset_postdata(); ?>				</div>
 			</div> <?php // end #content ?>
 
     </div> <?php // end ./container ?>
