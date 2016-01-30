@@ -705,7 +705,7 @@ kbd {
   padding: 2px 4px;
   font-size: 90%;
   color: #ffffff;
-  background-color: #333333;
+  background-color: #777777;
   border-radius: 3px;
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
@@ -2015,7 +2015,7 @@ select[multiple].input-lg {
 }
 .btn:hover,
 .btn:focus {
-  color: #333333;
+  color: #777777;
   text-decoration: none;
 }
 .btn:active,
@@ -2036,7 +2036,7 @@ fieldset[disabled] .btn {
   box-shadow: none;
 }
 .btn-default {
-  color: #333333;
+  color: #777777;
   background-color: #ffffff;
   border-color: #cccccc;
 }
@@ -2045,7 +2045,7 @@ fieldset[disabled] .btn {
 .btn-default:active,
 .btn-default.active,
 .open .dropdown-toggle.btn-default {
-  color: #333333;
+  color: #777777;
   background-color: #ebebeb;
   border-color: #adadad;
 }
@@ -2074,7 +2074,7 @@ fieldset[disabled] .btn-default.active {
 }
 .btn-default .badge {
   color: #ffffff;
-  background-color: #333333;
+  background-color: #777777;
 }
 .btn-primary {
   color: #ffffff;
@@ -3996,7 +3996,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #333333;
+  color: #777777;
   background-color: transparent;
 }
 .navbar-default .navbar-nav > .active > a,
@@ -4037,7 +4037,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #333333;
+    color: #777777;
     background-color: transparent;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
@@ -4057,7 +4057,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: #777777;
 }
 .navbar-default .navbar-link:hover {
-  color: #333333;
+  color: #777777;
 }
 .navbar-inverse {
   background-color: #204a6f !important;
@@ -4139,11 +4139,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   background-color: transparent;
 }
 .navbar-inverse .navbar-toggle {
-  border-color: #333333;
+  border-color: #777777;
 }
 .navbar-inverse .navbar-toggle:hover,
 .navbar-inverse .navbar-toggle:focus {
-  background-color: #333333;
+  background-color: #777777;
 }
 .navbar-inverse .navbar-toggle .icon-bar {
   background-color: #ffffff;
@@ -4718,7 +4718,7 @@ a.list-group-item {
   color: #555555;
 }
 a.list-group-item .list-group-item-heading {
-  color: #333333;
+  color: #777777;
 }
 a.list-group-item:hover,
 a.list-group-item:focus {
@@ -7377,7 +7377,7 @@ H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
 h2,
 .h2 {
-  font-size: 30px;
+  font-size: 33px;
   font-weight: 700;
   color: #515151;
   line-height: 34px;
@@ -8994,7 +8994,6 @@ a {
   left: 50%;
 }
 .featured-thumbnail-blog {
-  text-align: center;
   overflow: hidden;
   max-height: 180px;
   height: 180px;
@@ -9353,6 +9352,48 @@ a {
   padding: 10px 30px;
   float: right;
   margin-right: 10px;
+}
+.comment-more {
+  color: #38647f;
+  font-size: 15px;
+  font-weight: 600;
+  float: right;
+}
+.comment-more a {
+  text-decoration: none;
+  color: #38647F;
+  font-weight: 600;
+}
+.schedule-block-title {
+  text-transform: uppercase;
+  padding: 20px 0;
+}
+.free-seminar-content {
+  padding: 0 25px;
+}
+.free-seminar-content-sidebar {
+  padding: 0 25px;
+}
+.register-button {
+  background-color: #f39e1d;
+  line-height: 26px;
+  color: #FFF;
+  font-size: 24px;
+  padding: 15px 10px;
+  border: 0px none;
+  margin: 35px 0px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+}
+.register-button:hover {
+  background-color: #FFAE2D;
+}
+.register-button a {
+  color: #FFF;
+  text-decoration: none;
+  height: 85px;
+  width: 230px;
 }
 /*
 RETINA (2x RESOLUTION DEVICES)

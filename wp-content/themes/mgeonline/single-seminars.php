@@ -14,39 +14,56 @@ single-bookmarks.php
 ?>
 
 <?php get_header(); ?>
-
       <div class="container">
 
   			<div id="content" class="clearfix row">
 
-					<div id="main" class="col-md-8 clearfix" role="main">
+					<div id="main" class="col-md-9 clearfix" role="main">
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 						<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
+							<div class="free-seminar-content">
+								<h2><?php the_title(); ?></h2>
+								<?php global $brew_options; ?>
+								<?php if( $brew_options['featured'] == '2' || ( $brew_options['featured'] == '4' && is_single() ) || ( $brew_options['featured'] == '3' && is_home() ) ) { ?>
+									<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-featured' ); ?>
+									<?php if ( $image[1] < '750' && has_post_thumbnail() ) { ?>
+										<section class="featured-content featured-img featured-img-bg" style="background: url('<?php echo $image[0]; ?>')">
+									<?php } // end if 
+									else { ?>
+										<section class="featured-content featured-img">
+											<?php if ( has_post_thumbnail() ) { ?>
+													<?php the_post_thumbnail( 'large' ); ?>
+											<?php } // end if 
+											else { ?>
+												<hr>
+											<?php } //end else?>
+									<?php } // end else ?>
+								<?php } // end if 
+								else { ?>
+									<section class="featured-content featured-img">
+								<?php } // end else ?>
+								<section class="clearfix">
+									<?php the_content(); ?>
+								</section> <?php // end article section ?>
+								<p><strong>Tuition: <?php echo the_field('tuition'); ?></strong><br>
+								<strong>CE Credits: <?php echo the_field('ce_credits'); ?></strong></p>
+								<?php echo the_field('mge_notice'); ?>
+								<h3>Seminar Agenda</h3>
+								<?php if( have_rows('schedule') ): while ( have_rows('schedule') ) : the_row(); ?>
 
-							<header class="article-header">
+									   <div class="schedule-block-title"><em>
+										   <?php echo  the_sub_field('block_title'); ?>
+										   <?php echo  the_sub_field('start'); ?> - 
+										   <?php echo  the_sub_field('finish'); ?></em>
+									   </div>
+									   <?php echo  the_sub_field('content'); ?>
 
-								<h1 class="single-title custom-post-type-title"><?php the_title(); ?></h1>
-								<p class="byline vcard"><?php
-									printf( __( 'Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span> <span class="amp">&</span> filed under %4$s.', 'bonestheme' ), get_the_time( 'Y-m-j' ), get_the_time( __( 'F jS, Y', 'bonestheme' ) ), bones_get_the_author_posts_link(), get_the_term_list( $post->ID, 'custom_cat', ' ', ', ', '' ) );
-								?></p>
-
-							</header> <?php // end article header ?>
-
-							<section class="entry-content clearfix">
-
-								<?php the_content(); ?>
-
-							</section> <?php // end article section ?>
-
-							<footer class="article-footer">
-								<p class="tags"><?php echo get_the_term_list( get_the_ID(), 'custom_tag', '<span class="tags-title">' . __( 'Custom Tags:', 'bonestheme' ) . '</span> ', ', ' ) ?></p>
-
-							</footer> <?php // end article footer ?>
-
-							<?php comments_template(); ?>
-
+								<?php endwhile; ?>
+								<?php else : ?>
+								<?php endif; ?>
+							</div>
 						</article> <?php // end article ?>
 
 						<?php endwhile; ?>
@@ -69,8 +86,36 @@ single-bookmarks.php
 
 					</div> <?php // end #main ?>
 
-					<?php get_sidebar(); ?>
-
+					<div id="sidebar" class="col-md-3 free-seminar-content-sidebar">
+						<div class="register-button">
+							<a href="#">register for this seminar!</a>
+						</div>
+						<h3>Related Seminars</h3>
+						<div class="col-md-12">
+							<?php $second_query = new WP_Query( array(
+							  'post_type' => 'seminars',
+							  'posts_per_page' => 3,
+							  'post__not_in'=>array($post->ID)
+						   ) ); ?>
+							<?php   if($second_query->have_posts()) {
+								 while ($second_query->have_posts() ) : $second_query->the_post(); ?>
+								<div class="single_related ">
+									<div class="featured-thumbnail-blog">
+										<?php if ( has_post_thumbnail()) : ?>
+										<?php the_post_thumbnail('large'); ?> 
+										<?php else : ?>
+											<img src="<?php echo get_template_directory_uri(); ?>/library/images/mge-default.png" style="max-width:100%;">
+										<?php endif; ?>
+									</div>
+									<div class="clearfix"></div>
+										<h3><a href="<?php the_permalink() ?>" title=""><?php the_title(); ?></a></h3>
+									<div class="comment-more">
+										<a href="<?php echo get_permalink(); ?>">Read more &#8594;</a>
+									</div>
+								</div>
+							<?php endwhile; wp_reset_query(); } ?>
+						</div>
+					</div>
   			</div> <?php // end #content ?>
 
       </div> <?php // end ./container ?>

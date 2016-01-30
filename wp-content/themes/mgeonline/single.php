@@ -118,18 +118,18 @@
 				</div> <?php // end #main ?>
 
 				<div id="sidebar" class="col-md-4">
-				<div class="archive-title"><h2>Related Articles</h2></div>
-<?php
+				<div class="archive-title"><h3>Related Articles</h3></div>
+				<?php
 
-$related = get_posts( array( 'category__in' => wp_get_post_categories($post->ID), 'numberposts' => 2, 'post__not_in' => array($post->ID) ) );
-if( $related ) foreach( $related as $post ) {
-setup_postdata($post); ?>
+				$related = get_posts( array( 'category__in' => wp_get_post_categories($post->ID), 'numberposts' => 2, 'post__not_in' => array($post->ID) ) );
+				if( $related ) foreach( $related as $post ) {
+				setup_postdata($post); ?>
 
-        <div class="col-md-12 featured-thumbnail-blog clearfix">
-				<?php if ( has_post_thumbnail()) : ?>
-			   <?php the_post_thumbnail('large'); ?> 
-			   <?php else : ?>
-				<img src="<?php echo get_template_directory_uri(); ?>/library/images/mge-default.png" style="max-width:100%;">
+						<div class="col-md-12 featured-thumbnail-blog clearfix">
+								<?php if ( has_post_thumbnail()) : ?>
+							   <?php the_post_thumbnail('large'); ?> 
+							   <?php else : ?>
+								<img src="<?php echo get_template_directory_uri(); ?>/library/images/mge-default.png" style="max-width:100%;">
 				<?php endif; ?>
 		</div>
 		<div class="sidebar-content"> 
