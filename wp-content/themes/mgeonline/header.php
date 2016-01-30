@@ -30,6 +30,7 @@
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 		<link href='https://fonts.googleapis.com/css?family=Raleway:400,700,900,200' rel='stylesheet' type='text/css'>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script><script type="text/javascript" src="http://benalman.com/code/projects/jquery-hashchange/jquery.ba-hashchange.js"></script>
 		<?php // wordpress head functions ?>
 		<?php wp_head(); ?>
 		<?php // end of wordpress head ?>

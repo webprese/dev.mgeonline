@@ -27,7 +27,7 @@ Template Name: Seminar
 </div>
 <div class="container seminar-container">
 
-<div id="content" class="clearfix row">
+<div id="" class="clearfix row">
 	<div id="main" class="col-md-12 clearfix" role="main">
 		
         <div class="row">

@@ -30,9 +30,9 @@ Template Name: About
 							<?php echo the_field('content_section_1'); ?>
 						</div>		
 						<div class="col-md-6 col-xs-12 about-col-right">
-						<div class="embed-container">
-							<?php echo the_field('video_embed_1'); ?>
-						</div>
+							<div class="embed-container">
+								<?php echo the_field('video_embed_1'); ?>
+							</div>
 							<div class="col-md-8 col-xs-12"><p><em><?php echo the_field('video_description_1'); ?></em></p></div>
 							<div class="col-md-4 col-xs-12"><a href="#"><?php echo the_field('video_url_1'); ?>Watch Video</a></div>
 							<div class="about-image">
