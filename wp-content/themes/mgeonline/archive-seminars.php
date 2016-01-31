@@ -9,14 +9,13 @@
 					<?php echo the_field('signup_description', 18); ?>	
 				</div>
 				<div class="col-xs-12 col-md-4 seminar-button col-centered-mob">
-					<a href="<?php echo the_field('signup_link'); ?>" target="_blank">SIGNUP NOW</a>
+					<!--<a href="<?php echo the_field('signup_link'); ?>" target="_blank">SIGNUP NOW</a>-->
 				</div>	
 				<div class="col-xs-12 col-md-4 speakers-button col-centered-mob">
 					<a href="#">KEY SPEAKERS</a>	
 				</div>
 			</div>
 		</div>
-		
 	</div>
 </div>
       <div class="container">
@@ -24,37 +23,36 @@
   			<div id="" class="row clearfix">
 
 					<div id="main" class="col-md-12 clearfix" role="main">
-
+<?php query_posts($query_string."&order=ASC"); ?>
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 						<article class="blog-col-feed" id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?> role="article">
-
 							<section class="entry-content clearfix">
-									<div class="col-md-2 featured-thumbnail-blog">
+								<div class="col-md-2 featured-thumbnail-blog">
 									<?php if ( has_post_thumbnail()) : ?>
-								   <?php the_post_thumbnail('medium'); ?>
-								   <?php else : ?>
+									<?php the_post_thumbnail('medium'); ?>
+									<?php else : ?>
 									<img src="<?php echo get_template_directory_uri(); ?>/library/images/mge-default.png" style="max-width:100%;">
 									<?php endif; ?>
-							</div>
-									<div class="col-md-8 media-excerpt">
-
-								<h3 class="archive-title h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-								
-									<?php the_excerpt(); ?>
-									
-									</div>
-									
-									
-									
 								</div>
-
+								<div class="col-md-8 media-excerpt">
+									<h2>
+										<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+										<?php the_title(); ?>
+										</a>
+									</h2>
+									<?php the_field('custom_excerpt'); ?>
+									<p><strong>Tuition: <?php echo the_field('tuition'); ?> | CE Credits: <?php echo the_field('ce_credits'); ?></strong></p>
+									<div class="click-for-info">
+										<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+											CLICK HERE FOR INFORMATION AND REGISTRATION
+										</a>
+									</div>
+									<div class="booking-info">
+										<?php the_field('booking_info'); ?>
+									</div>
+								</div>
 							</section> <?php // end article section ?>
-
-							<footer class="article-footer">
-
-							</footer> <?php // end article footer ?>
-
 						</article> <?php // end article ?>
 
 						<?php endwhile; ?>
@@ -85,13 +83,32 @@
 								</article>
 
 						<?php endif; ?>
-
-					</div> <?php // end #main ?>
-
-	
-
+					</div> <?php // end #main ?>	
   			</div> <?php // end #content ?>
-
-      </div> <?php // end ./container ?> 
-
+		</div> <?php // end ./container ?> 
+	<!--	
+	<div class="row grey-bg">
+		<div class="container">
+			<div class="col-md-12 speakers">
+				<h3><?php echo the_field('content_header_4'); ?></h3>
+				<div class="blue-line"></div>
+				<?php if( have_rows('speakers') ): ?>
+				<?php while( have_rows('speakers') ): the_row(); ?>
+				<div class="col-xs-12 col-md-6 ">
+					<div class="col-md-4">
+						<img src="<?php echo get_sub_field('speaker_image'); ?>" style="max-width:100%"/>
+					</div>
+					<div class="col-md-8">
+						<h3><?php the_sub_field('speaker_name'); ?></h3>
+							<?php the_sub_field('speaker_excerpt'); ?>
+							<div class="home-links">
+							<a href="<?php the_sub_field('name_link'); ?>" class="more">Find Out More &#8594;</a>
+							</div>	
+					</div>
+				</div>
+			<?php endwhile; ?>
+			<?php endif; ?>
+			</div>
+		</div>
+	</div> -->
 <?php get_footer(); ?>
